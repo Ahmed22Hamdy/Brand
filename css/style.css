@@ -1,0 +1,118 @@
+/* Brand Pro — css/style.css
+   Design: Black, White & Gold theme
+   Uses Bootstrap utilities; this file contains overrides and custom components.
+*/
+:root{
+  --gold:#caa33a; /* primary gold */
+  --gold-dark:#b8860b;
+  --dark:#0b0b0b;
+  --muted:#6c6c6c;
+  --max-width:1200px;
+}
+/* Basic typography */
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color:#111;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+h1,h2,h3,h4,h5{font-family:'Playfair Display', serif}
+
+/* Brand */
+.brand-logo{
+  display:inline-block;
+  width:40px;
+  height:40px;
+  background:var(--gold);
+  color:var(--dark);
+  font-weight:700;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.brand-text{font-weight:600;letter-spacing:0.5px}
+
+/* Buttons */
+.btn-gold{
+  background:linear-gradient(180deg,var(--gold) 0%, var(--gold-dark) 100%);
+  color:#0b0b0b;
+  border:none;
+}
+.btn-gold:hover{opacity:0.95}
+
+/* Hero */
+.hero-section{
+  background-image:linear-gradient(rgba(8, 8, 8, 0.979),rgba(241, 242, 247, 0.429)), url('https://images.unsplash.com/photo-1542089363-6c4a4a8a6b9b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:5rem 0;
+}
+.hero-content h1{letter-spacing:0.3px}
+.hero-overlay{position:absolute;inset:0}
+
+/* Category card */
+.category-card{height:220px}
+.category-card img{object-fit:cover;height:100%;width:100%;transition:transform .6s ease}
+.category-card:hover img{transform:scale(1.07)}
+.category-overlay{position:absolute;left:0;bottom:0;padding:1rem;background:linear-gradient(180deg,transparent,rgba(0,0,0,0.45));color:#fff}
+
+/* Product card */
+.product-card{cursor:default}
+.product-img{transition:transform .4s ease, filter .3s ease}
+.product-card:hover .product-img{transform:scale(1.05)}
+.add-to-cart{transition:transform .15s ease}
+.add-to-cart:hover{transform:translateY(-3px)}
+
+/* Sticky sidebar */
+.sticky-sidebar{position:sticky;top:90px}
+
+/* Reviews */
+.review-avatar{width:48px;height:48px}
+
+/* Footer */
+footer{border-top:1px solid rgba(255,255,255,0.03)}
+
+/* Scroll to top */
+.scroll-top{position:fixed;right:18px;bottom:18px;display:none;border-radius:50%;z-index:999}
+
+/* Loading overlay */
+.loading-overlay{position:fixed;inset:0;background:rgba(11,11,11,0.6);z-index:2000}
+
+/* Text gold utility */
+.text-gold{color:var(--gold)}
+.bg-gold{background:var(--gold)!important;color:var(--dark)!important}
+
+/* Dark mode */
+.dark-mode{background:#0b0b0b;color:#eaeaea}
+.dark-mode .navbar{background:#0b0b0b}
+.dark-mode footer{background:#070707}
+.dark-mode .card{background:#111;color:#ddd}
+.dark-mode .product-card{background:#0f0f0f}
+
+/* Responsive tweaks */
+@media (max-width: 767px){
+  .hero-section{padding:3rem 0}
+  .category-card{height:160px}
+}
+
+/* Utility for object-fit images */
+.object-fit{object-fit:cover;height:100%;width:100%}
+
+/* small helper for product grid */
+.products-grid .card{border-radius:10px}
+
+/* subtle anim */
+.fade-in{opacity:0;transform:translateY(8px);animation:fadeInUp .6s forwards}
+@keyframes fadeInUp{to{opacity:1;transform:none}}
+
+/* form tweaks */
+.form-control:focus{box-shadow:none;border-color:var(--gold-dark)}
+
+/* ensure anchor links smooth scroll via CSS fallback */
+html{scroll-behavior:smooth}
+
+/* ensure a max content width */
+.container{max-width:var(--max-width)}
